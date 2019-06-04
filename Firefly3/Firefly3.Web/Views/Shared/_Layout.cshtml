@@ -19,7 +19,7 @@
 <head>
     @{Html.RenderPartial(MVC.Views.Shared._LayoutHead);}
     @RenderSection("Head", false)
-    <title>@(ViewData["Title"]) - Firefly3</title>
+    <title>TrueCloud Applications</title>
 </head>
 <body id="s-@(ViewData["PageId"])Page" class="@(ViewData["BodyClass"]) fixed sidebar-mini hold-transition skin-@theme @(darkSidebar ? "dark-sidebar" : "light-sidebar")@(hideNav ? " no-navigation" : " has-layout-event")@(rtl ? " rtl" : "")">
 <div id="PageBackground" style="display: none"></div>
@@ -40,50 +40,21 @@ else
 {
 <div class="wrapper">
     <header class="main-header">
-        <a href="~/" class="logo">
-            <span class="logo-mini"><i><img src="https://i.imgur.com/igzfCFc.png" height="50" width="50" /></i></span>
-            <span class="logo-lg"><i><img src="https://i.imgur.com/igzfCFc.png" height="50" width="150" /></i>@*<b>TrueSense</b>*@</span>
-        </a>
-        <nav class="navbar navbar-static-top" role="navigation">
             <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                 <span class="sr-only">Toggle navigation</span>
             </a>
-
-            <div class="navbar-custom-menu">
-                <ul class="nav navbar-nav">
-                    <li class="dropdown user user-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="@userImage" class="user-image" alt="User Image">
-                            <span class="hidden-xs">@Serenity.Authorization.Username</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <!-- User image -->
-                            <li class="user-header">
-                                <img src="@userImage" class="img-circle" alt="User Image">
-
-                                <p>
-                                    @(user != null ? user.DisplayName : "")
-                                </p>
-                            </li>
-
-                            <!-- Menu Footer-->
-                            <li class="user-footer">
-                                <div class="pull-left">
-                                    <a href="~/Account/ChangePassword" class="btn btn-default btn-flat"><i class="fa fa-lock fa-fw"></i> @Texts.Forms.Membership.ChangePassword.FormTitle</a>
-                                </div>
-                                <div class="pull-right">
-                                    <a href="~/Account/Signout" class="btn btn-default btn-flat"><i class="fa fa-sign-out fa-fw"></i> @LocalText.Get("Navigation.LogoutLink")</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-sliders"></i></a>
-                    </li>
-                </ul>
+        <a  class="logo">
+            @*<span class="logo-mini"><i><img src="~/Content/site/images/tsmsqrblue.png" height="50" width="50" /></i></span>
+            <span class="logo-lg"><i><img src="~/Content/site/images/tsmfix.jpg" height="50" width="150" /></i></span>*@
+        </a>
+        <nav class="navbar navbar-static-top" role="navigation">
+            @*<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+        </a>*@
+            <div align="right">
+            <span class="logo-lg"><i><img src="~/Content/site/images/tsmfix.jpg" height="50" width="150" /></i></span>
             </div>
-        </nav>
+         </nav>
     </header>
 
     <aside class="main-sidebar">
@@ -113,13 +84,6 @@ else
             @RenderBody()
         </section>
     </div>
-
-    <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-            @Texts.Site.Layout.FooterInfo
-        </div>
-        <strong>@Texts.Site.Layout.FooterCopyright</strong> @Texts.Site.Layout.FooterRights
-    </footer>
 
     <aside class="control-sidebar control-sidebar-dark">
         <div class="tab-content">

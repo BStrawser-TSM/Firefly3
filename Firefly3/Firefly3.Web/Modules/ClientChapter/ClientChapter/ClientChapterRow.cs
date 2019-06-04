@@ -29,7 +29,7 @@ namespace Firefly3.ClientChapter.Entities
             set { Fields.ClientId[this] = value; }
         }
 
-        [DisplayName("Chapter Code"), Size(20)]
+        [DisplayName("Chapter Code"), Size(20), QuickSearch]
         public String ChapterCode
         {
             get { return Fields.ChapterCode[this]; }

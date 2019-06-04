@@ -517,6 +517,9 @@
     <Content Include="Content\serenity\images\zoom.png" />
     <Content Include="Content\serenity\serenity.css" />
     <Content Include="Content\simple-line-icons.css" />
+    <Content Include="Content\site\images\tsm-favicon.ico" />
+    <Content Include="Content\site\images\tsmfix.jpg" />
+    <Content Include="Content\site\images\tsmsqrblue.png" />
     <Content Include="Content\slick-default-theme.css" />
     <Content Include="Content\slick.columnpicker.css" />
     <Content Include="Content\slick.grid.css" />
@@ -1571,12 +1574,18 @@
     <TypeScriptCompile Include="Modules\Common\Helpers\BasicProgressDialog.ts" />
     <TypeScriptCompile Include="Modules\Common\Helpers\BulkServiceAction.ts" />
     <TypeScriptCompile Include="Scripts\typings\serenity\Serenity.CoreLib.d.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\ClientChapter.ClientChapterRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\ClientChapter.ClientChapterService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\ClientChapter.ClientChapterRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\ClientChapter.ClientChapterService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <Content Include="Modules\ClientChapter\ClientChapter\ClientChapterIndex.cshtml" />
     <TypeScriptCompile Include="Modules\ClientChapter\ClientChapter\ClientChapterDialog.ts" />
     <TypeScriptCompile Include="Modules\ClientChapter\ClientChapter\ClientChapterGrid.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\ClientChapter.ClientChapterForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\ClientChapter.ClientChapterForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <Content Include="Content\site\site.clientchapter.less" />
   </ItemGroup>
   <ItemGroup>
