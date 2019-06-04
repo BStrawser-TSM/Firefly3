@@ -360,9 +360,6 @@ declare namespace Firefly3.Administration {
     }
 }
 declare namespace Firefly3.ClientChapter {
-    class ClientChapterForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
     interface ClientChapterForm {
         ClientId: Serenity.StringEditor;
         ChapterCode: Serenity.StringEditor;
@@ -421,10 +418,11 @@ declare namespace Firefly3.ClientChapter {
         Flex3: Serenity.StringEditor;
         Flex4: Serenity.StringEditor;
         Flex5: Serenity.StringEditor;
-        CreateDate: Serenity.DateEditor;
-        ModifiedDate: Serenity.DateEditor;
-        CreatedBy: Serenity.StringEditor;
-        ModifiedBy: Serenity.StringEditor;
+    }
+    class ClientChapterForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace Firefly3.ClientChapter {
@@ -496,69 +494,69 @@ declare namespace Firefly3.ClientChapter {
         const idProperty = "ClientChapterSKey";
         const nameProperty = "ClientId";
         const localTextPrefix = "ClientChapter.ClientChapter";
-        namespace Fields {
-            const ClientChapterSKey: any;
-            const ClientId: any;
-            const ChapterCode: any;
-            const ChapterName: any;
-            const ClientLevel1: any;
-            const ClientLevel2: any;
-            const ClientLevel3: any;
-            const ClientLevel4: any;
-            const EnvelopeLine1: any;
-            const EnvelopeLine2: any;
-            const EnvelopeLine3: any;
-            const EnvelopeLine4: any;
-            const EnvelopeLine5: any;
-            const EnvelopeClientName: any;
-            const ClientAddressLine1: any;
-            const ClientAddressLine2: any;
-            const ClientAddressLine3: any;
-            const ClientCity: any;
-            const ClientState: any;
-            const ClientZip: any;
-            const Uw: any;
-            const Commander: any;
-            const CommanderTitle: any;
-            const BillingChapter: any;
-            const AreaName: any;
-            const CommanderLastName: any;
-            const ClientPhone: any;
-            const ClientFax: any;
-            const ClientEmailAddress: any;
-            const OldChapterCode: any;
-            const CustomerBillingNumber: any;
-            const WebAddress: any;
-            const Region: any;
-            const Lockbox: any;
-            const UwBlackoutFromDate: any;
-            const UwBlackoutToDate: any;
-            const MdCoord: any;
-            const Commander2: any;
-            const CommanderTitle2: any;
-            const CommanderLastName2: any;
-            const BillingChapter2: any;
-            const ClientEmailAddress2: any;
-            const MspThank: any;
-            const LastThankYouDate: any;
-            const SeedNames: any;
-            const OriginalName: any;
-            const ClientName: any;
-            const ChapterDesignation: any;
-            const Division: any;
-            const Active: any;
-            const Vertical: any;
-            const ClientActiveDate: any;
-            const FiscalYearBegins: any;
-            const Flex1: any;
-            const Flex2: any;
-            const Flex3: any;
-            const Flex4: any;
-            const Flex5: any;
-            const CreateDate: any;
-            const ModifiedDate: any;
-            const CreatedBy: any;
-            const ModifiedBy: any;
+        const enum Fields {
+            ClientChapterSKey = "ClientChapterSKey",
+            ClientId = "ClientId",
+            ChapterCode = "ChapterCode",
+            ChapterName = "ChapterName",
+            ClientLevel1 = "ClientLevel1",
+            ClientLevel2 = "ClientLevel2",
+            ClientLevel3 = "ClientLevel3",
+            ClientLevel4 = "ClientLevel4",
+            EnvelopeLine1 = "EnvelopeLine1",
+            EnvelopeLine2 = "EnvelopeLine2",
+            EnvelopeLine3 = "EnvelopeLine3",
+            EnvelopeLine4 = "EnvelopeLine4",
+            EnvelopeLine5 = "EnvelopeLine5",
+            EnvelopeClientName = "EnvelopeClientName",
+            ClientAddressLine1 = "ClientAddressLine1",
+            ClientAddressLine2 = "ClientAddressLine2",
+            ClientAddressLine3 = "ClientAddressLine3",
+            ClientCity = "ClientCity",
+            ClientState = "ClientState",
+            ClientZip = "ClientZip",
+            Uw = "Uw",
+            Commander = "Commander",
+            CommanderTitle = "CommanderTitle",
+            BillingChapter = "BillingChapter",
+            AreaName = "AreaName",
+            CommanderLastName = "CommanderLastName",
+            ClientPhone = "ClientPhone",
+            ClientFax = "ClientFax",
+            ClientEmailAddress = "ClientEmailAddress",
+            OldChapterCode = "OldChapterCode",
+            CustomerBillingNumber = "CustomerBillingNumber",
+            WebAddress = "WebAddress",
+            Region = "Region",
+            Lockbox = "Lockbox",
+            UwBlackoutFromDate = "UwBlackoutFromDate",
+            UwBlackoutToDate = "UwBlackoutToDate",
+            MdCoord = "MdCoord",
+            Commander2 = "Commander2",
+            CommanderTitle2 = "CommanderTitle2",
+            CommanderLastName2 = "CommanderLastName2",
+            BillingChapter2 = "BillingChapter2",
+            ClientEmailAddress2 = "ClientEmailAddress2",
+            MspThank = "MspThank",
+            LastThankYouDate = "LastThankYouDate",
+            SeedNames = "SeedNames",
+            OriginalName = "OriginalName",
+            ClientName = "ClientName",
+            ChapterDesignation = "ChapterDesignation",
+            Division = "Division",
+            Active = "Active",
+            Vertical = "Vertical",
+            ClientActiveDate = "ClientActiveDate",
+            FiscalYearBegins = "FiscalYearBegins",
+            Flex1 = "Flex1",
+            Flex2 = "Flex2",
+            Flex3 = "Flex3",
+            Flex4 = "Flex4",
+            Flex5 = "Flex5",
+            CreateDate = "CreateDate",
+            ModifiedDate = "ModifiedDate",
+            CreatedBy = "CreatedBy",
+            ModifiedBy = "ModifiedBy"
         }
     }
 }
@@ -570,12 +568,56 @@ declare namespace Firefly3.ClientChapter {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ClientChapterRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ClientChapterRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "ClientChapter/ClientChapter/Create",
+            Update = "ClientChapter/ClientChapter/Update",
+            Delete = "ClientChapter/ClientChapter/Delete",
+            Retrieve = "ClientChapter/ClientChapter/Retrieve",
+            List = "ClientChapter/ClientChapter/List"
+        }
+    }
+}
+declare namespace Firefly3.ClientChapter {
+    interface DropDownLookupsRow {
+        DropDownLookupsSKey?: number;
+        DropDownField?: string;
+        DropdownValue?: string;
+        DropdownSort?: number;
+        CreateDate?: string;
+        ModifiedDate?: string;
+        CreatedBy?: string;
+        ModifiedBy?: string;
+    }
+    namespace DropDownLookupsRow {
+        const idProperty = "DropDownLookupsSKey";
+        const nameProperty = "DropDownField";
+        const localTextPrefix = "ClientChapter.DropDownLookups";
+        const enum Fields {
+            DropDownLookupsSKey = "DropDownLookupsSKey",
+            DropDownField = "DropDownField",
+            DropdownValue = "DropdownValue",
+            DropdownSort = "DropdownSort",
+            CreateDate = "CreateDate",
+            ModifiedDate = "ModifiedDate",
+            CreatedBy = "CreatedBy",
+            ModifiedBy = "ModifiedBy"
+        }
+    }
+}
+declare namespace Firefly3.ClientChapter {
+    namespace DropDownLookupsService {
+        const baseUrl = "ClientChapter/DropDownLookups";
+        function Create(request: Serenity.SaveRequest<DropDownLookupsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<DropDownLookupsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DropDownLookupsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DropDownLookupsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "ClientChapter/DropDownLookups/Create",
+            Update = "ClientChapter/DropDownLookups/Update",
+            Delete = "ClientChapter/DropDownLookups/Delete",
+            Retrieve = "ClientChapter/DropDownLookups/Retrieve",
+            List = "ClientChapter/DropDownLookups/List"
         }
     }
 }
@@ -689,13 +731,9 @@ declare namespace Firefly3.Membership {
 }
 declare namespace Firefly3.Membership {
     interface LoginForm {
-        Username: Serenity.StringEditor;
-        Password: Serenity.PasswordEditor;
     }
     class LoginForm extends Serenity.PrefixedContext {
         static formKey: string;
-        private static init;
-        constructor(prefix: string);
     }
 }
 declare namespace Firefly3.Membership {

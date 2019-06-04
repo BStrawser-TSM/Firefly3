@@ -311,82 +311,80 @@ var Firefly3;
     (function (ClientChapter) {
         var ClientChapterForm = /** @class */ (function (_super) {
             __extends(ClientChapterForm, _super);
-            function ClientChapterForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
+            function ClientChapterForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!ClientChapterForm.init) {
+                    ClientChapterForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.BooleanEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(ClientChapterForm, [
+                        'ClientId', w0,
+                        'ChapterCode', w0,
+                        'ChapterName', w0,
+                        'ClientLevel1', w0,
+                        'ClientLevel2', w0,
+                        'ClientLevel3', w0,
+                        'ClientLevel4', w0,
+                        'EnvelopeLine1', w0,
+                        'EnvelopeLine2', w0,
+                        'EnvelopeLine3', w0,
+                        'EnvelopeLine4', w0,
+                        'EnvelopeLine5', w0,
+                        'EnvelopeClientName', w0,
+                        'ClientAddressLine1', w0,
+                        'ClientAddressLine2', w0,
+                        'ClientAddressLine3', w0,
+                        'ClientCity', w0,
+                        'ClientState', w0,
+                        'ClientZip', w0,
+                        'Uw', w0,
+                        'Commander', w0,
+                        'CommanderTitle', w0,
+                        'BillingChapter', w0,
+                        'AreaName', w0,
+                        'CommanderLastName', w0,
+                        'ClientPhone', w0,
+                        'ClientFax', w0,
+                        'ClientEmailAddress', w0,
+                        'OldChapterCode', w0,
+                        'CustomerBillingNumber', w0,
+                        'WebAddress', w0,
+                        'Region', w0,
+                        'Lockbox', w1,
+                        'UwBlackoutFromDate', w2,
+                        'UwBlackoutToDate', w2,
+                        'MdCoord', w0,
+                        'Commander2', w0,
+                        'CommanderTitle2', w0,
+                        'CommanderLastName2', w0,
+                        'BillingChapter2', w0,
+                        'ClientEmailAddress2', w0,
+                        'MspThank', w1,
+                        'LastThankYouDate', w2,
+                        'SeedNames', w1,
+                        'OriginalName', w0,
+                        'ClientName', w0,
+                        'ChapterDesignation', w0,
+                        'Division', w0,
+                        'Active', w1,
+                        'Vertical', w0,
+                        'ClientActiveDate', w2,
+                        'FiscalYearBegins', w2,
+                        'Flex1', w0,
+                        'Flex2', w0,
+                        'Flex3', w0,
+                        'Flex4', w0,
+                        'Flex5', w0
+                    ]);
+                }
+                return _this;
             }
             ClientChapterForm.formKey = 'ClientChapter.ClientChapter';
             return ClientChapterForm;
         }(Serenity.PrefixedContext));
         ClientChapter.ClientChapterForm = ClientChapterForm;
-        [,
-            ['ClientId', function () { return Serenity.StringEditor; }],
-            ['ChapterCode', function () { return Serenity.StringEditor; }],
-            ['ChapterName', function () { return Serenity.StringEditor; }],
-            ['ClientLevel1', function () { return Serenity.StringEditor; }],
-            ['ClientLevel2', function () { return Serenity.StringEditor; }],
-            ['ClientLevel3', function () { return Serenity.StringEditor; }],
-            ['ClientLevel4', function () { return Serenity.StringEditor; }],
-            ['EnvelopeLine1', function () { return Serenity.StringEditor; }],
-            ['EnvelopeLine2', function () { return Serenity.StringEditor; }],
-            ['EnvelopeLine3', function () { return Serenity.StringEditor; }],
-            ['EnvelopeLine4', function () { return Serenity.StringEditor; }],
-            ['EnvelopeLine5', function () { return Serenity.StringEditor; }],
-            ['EnvelopeClientName', function () { return Serenity.StringEditor; }],
-            ['ClientAddressLine1', function () { return Serenity.StringEditor; }],
-            ['ClientAddressLine2', function () { return Serenity.StringEditor; }],
-            ['ClientAddressLine3', function () { return Serenity.StringEditor; }],
-            ['ClientCity', function () { return Serenity.StringEditor; }],
-            ['ClientState', function () { return Serenity.StringEditor; }],
-            ['ClientZip', function () { return Serenity.StringEditor; }],
-            ['Uw', function () { return Serenity.StringEditor; }],
-            ['Commander', function () { return Serenity.StringEditor; }],
-            ['CommanderTitle', function () { return Serenity.StringEditor; }],
-            ['BillingChapter', function () { return Serenity.StringEditor; }],
-            ['AreaName', function () { return Serenity.StringEditor; }],
-            ['CommanderLastName', function () { return Serenity.StringEditor; }],
-            ['ClientPhone', function () { return Serenity.StringEditor; }],
-            ['ClientFax', function () { return Serenity.StringEditor; }],
-            ['ClientEmailAddress', function () { return Serenity.StringEditor; }],
-            ['OldChapterCode', function () { return Serenity.StringEditor; }],
-            ['CustomerBillingNumber', function () { return Serenity.StringEditor; }],
-            ['WebAddress', function () { return Serenity.StringEditor; }],
-            ['Region', function () { return Serenity.StringEditor; }],
-            ['Lockbox', function () { return Serenity.BooleanEditor; }],
-            ['UwBlackoutFromDate', function () { return Serenity.DateEditor; }],
-            ['UwBlackoutToDate', function () { return Serenity.DateEditor; }],
-            ['MdCoord', function () { return Serenity.StringEditor; }],
-            ['Commander2', function () { return Serenity.StringEditor; }],
-            ['CommanderTitle2', function () { return Serenity.StringEditor; }],
-            ['CommanderLastName2', function () { return Serenity.StringEditor; }],
-            ['BillingChapter2', function () { return Serenity.StringEditor; }],
-            ['ClientEmailAddress2', function () { return Serenity.StringEditor; }],
-            ['MspThank', function () { return Serenity.BooleanEditor; }],
-            ['LastThankYouDate', function () { return Serenity.DateEditor; }],
-            ['SeedNames', function () { return Serenity.BooleanEditor; }],
-            ['OriginalName', function () { return Serenity.StringEditor; }],
-            ['ClientName', function () { return Serenity.StringEditor; }],
-            ['ChapterDesignation', function () { return Serenity.StringEditor; }],
-            ['Division', function () { return Serenity.StringEditor; }],
-            ['Active', function () { return Serenity.BooleanEditor; }],
-            ['Vertical', function () { return Serenity.StringEditor; }],
-            ['ClientActiveDate', function () { return Serenity.DateEditor; }],
-            ['FiscalYearBegins', function () { return Serenity.DateEditor; }],
-            ['Flex1', function () { return Serenity.StringEditor; }],
-            ['Flex2', function () { return Serenity.StringEditor; }],
-            ['Flex3', function () { return Serenity.StringEditor; }],
-            ['Flex4', function () { return Serenity.StringEditor; }],
-            ['Flex5', function () { return Serenity.StringEditor; }],
-            ['CreateDate', function () { return Serenity.DateEditor; }],
-            ['ModifiedDate', function () { return Serenity.DateEditor; }],
-            ['CreatedBy', function () { return Serenity.StringEditor; }],
-            ['ModifiedBy', function () { return Serenity.StringEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(ClientChapterForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
     })(ClientChapter = Firefly3.ClientChapter || (Firefly3.ClientChapter = {}));
 })(Firefly3 || (Firefly3 = {}));
 var Firefly3;
@@ -398,73 +396,6 @@ var Firefly3;
             ClientChapterRow.idProperty = 'ClientChapterSKey';
             ClientChapterRow.nameProperty = 'ClientId';
             ClientChapterRow.localTextPrefix = 'ClientChapter.ClientChapter';
-            var Fields;
-            (function (Fields) {
-            })(Fields = ClientChapterRow.Fields || (ClientChapterRow.Fields = {}));
-            [
-                'ClientChapterSKey',
-                'ClientId',
-                'ChapterCode',
-                'ChapterName',
-                'ClientLevel1',
-                'ClientLevel2',
-                'ClientLevel3',
-                'ClientLevel4',
-                'EnvelopeLine1',
-                'EnvelopeLine2',
-                'EnvelopeLine3',
-                'EnvelopeLine4',
-                'EnvelopeLine5',
-                'EnvelopeClientName',
-                'ClientAddressLine1',
-                'ClientAddressLine2',
-                'ClientAddressLine3',
-                'ClientCity',
-                'ClientState',
-                'ClientZip',
-                'Uw',
-                'Commander',
-                'CommanderTitle',
-                'BillingChapter',
-                'AreaName',
-                'CommanderLastName',
-                'ClientPhone',
-                'ClientFax',
-                'ClientEmailAddress',
-                'OldChapterCode',
-                'CustomerBillingNumber',
-                'WebAddress',
-                'Region',
-                'Lockbox',
-                'UwBlackoutFromDate',
-                'UwBlackoutToDate',
-                'MdCoord',
-                'Commander2',
-                'CommanderTitle2',
-                'CommanderLastName2',
-                'BillingChapter2',
-                'ClientEmailAddress2',
-                'MspThank',
-                'LastThankYouDate',
-                'SeedNames',
-                'OriginalName',
-                'ClientName',
-                'ChapterDesignation',
-                'Division',
-                'Active',
-                'Vertical',
-                'ClientActiveDate',
-                'FiscalYearBegins',
-                'Flex1',
-                'Flex2',
-                'Flex3',
-                'Flex4',
-                'Flex5',
-                'CreateDate',
-                'ModifiedDate',
-                'CreatedBy',
-                'ModifiedBy'
-            ].forEach(function (x) { return Fields[x] = x; });
         })(ClientChapterRow = ClientChapter.ClientChapterRow || (ClientChapter.ClientChapterRow = {}));
     })(ClientChapter = Firefly3.ClientChapter || (Firefly3.ClientChapter = {}));
 })(Firefly3 || (Firefly3 = {}));
@@ -475,9 +406,6 @@ var Firefly3;
         var ClientChapterService;
         (function (ClientChapterService) {
             ClientChapterService.baseUrl = 'ClientChapter/ClientChapter';
-            var Methods;
-            (function (Methods) {
-            })(Methods = ClientChapterService.Methods || (ClientChapterService.Methods = {}));
             [
                 'Create',
                 'Update',
@@ -488,9 +416,41 @@ var Firefly3;
                 ClientChapterService[x] = function (r, s, o) {
                     return Q.serviceRequest(ClientChapterService.baseUrl + '/' + x, r, s, o);
                 };
-                Methods[x] = ClientChapterService.baseUrl + '/' + x;
             });
         })(ClientChapterService = ClientChapter.ClientChapterService || (ClientChapter.ClientChapterService = {}));
+    })(ClientChapter = Firefly3.ClientChapter || (Firefly3.ClientChapter = {}));
+})(Firefly3 || (Firefly3 = {}));
+var Firefly3;
+(function (Firefly3) {
+    var ClientChapter;
+    (function (ClientChapter) {
+        var DropDownLookupsRow;
+        (function (DropDownLookupsRow) {
+            DropDownLookupsRow.idProperty = 'DropDownLookupsSKey';
+            DropDownLookupsRow.nameProperty = 'DropDownField';
+            DropDownLookupsRow.localTextPrefix = 'ClientChapter.DropDownLookups';
+        })(DropDownLookupsRow = ClientChapter.DropDownLookupsRow || (ClientChapter.DropDownLookupsRow = {}));
+    })(ClientChapter = Firefly3.ClientChapter || (Firefly3.ClientChapter = {}));
+})(Firefly3 || (Firefly3 = {}));
+var Firefly3;
+(function (Firefly3) {
+    var ClientChapter;
+    (function (ClientChapter) {
+        var DropDownLookupsService;
+        (function (DropDownLookupsService) {
+            DropDownLookupsService.baseUrl = 'ClientChapter/DropDownLookups';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                DropDownLookupsService[x] = function (r, s, o) {
+                    return Q.serviceRequest(DropDownLookupsService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(DropDownLookupsService = ClientChapter.DropDownLookupsService || (ClientChapter.DropDownLookupsService = {}));
     })(ClientChapter = Firefly3.ClientChapter || (Firefly3.ClientChapter = {}));
 })(Firefly3 || (Firefly3 = {}));
 var Firefly3;
@@ -579,19 +539,8 @@ var Firefly3;
     (function (Membership) {
         var LoginForm = /** @class */ (function (_super) {
             __extends(LoginForm, _super);
-            function LoginForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!LoginForm.init) {
-                    LoginForm.init = true;
-                    var s = Serenity;
-                    var w0 = s.StringEditor;
-                    var w1 = s.PasswordEditor;
-                    Q.initFormType(LoginForm, [
-                        'Username', w0,
-                        'Password', w1
-                    ]);
-                }
-                return _this;
+            function LoginForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
             }
             LoginForm.formKey = 'Membership.Login';
             return LoginForm;
@@ -658,7 +607,7 @@ var Firefly3;
 (function (Firefly3) {
     var Texts;
     (function (Texts) {
-        Firefly3['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, Northwind: { Category: { CategoryID: 1, CategoryName: 1, Description: 1, Picture: 1 }, CategoryLang: { CategoryId: 1, CategoryName: 1, Description: 1, Id: 1, LanguageId: 1 }, Customer: { Address: 1, City: 1, CompanyName: 1, ContactName: 1, ContactTitle: 1, Country: 1, CustomerID: 1, Email: 1, Fax: 1, ID: 1, LastContactDate: 1, LastContactedBy: 1, NoteList: 1, Phone: 1, PostalCode: 1, Region: 1, Representatives: 1, SendBulletin: 1 }, CustomerCustomerDemo: { CustomerAddress: 1, CustomerCity: 1, CustomerCompanyName: 1, CustomerContactName: 1, CustomerContactTitle: 1, CustomerCountry: 1, CustomerFax: 1, CustomerID: 1, CustomerPhone: 1, CustomerPostalCode: 1, CustomerRegion: 1, CustomerTypeCustomerDesc: 1, CustomerTypeID: 1, ID: 1 }, CustomerDemographic: { CustomerDesc: 1, CustomerTypeID: 1, ID: 1 }, CustomerDetails: { Email: 1, Id: 1, LastContactDate: 1, LastContactedBy: 1, LastContactedByAddress: 1, LastContactedByBirthDate: 1, LastContactedByCity: 1, LastContactedByCountry: 1, LastContactedByExtension: 1, LastContactedByFirstName: 1, LastContactedByHireDate: 1, LastContactedByHomePhone: 1, LastContactedByLastName: 1, LastContactedByNotes: 1, LastContactedByPhoto: 1, LastContactedByPhotoPath: 1, LastContactedByPostalCode: 1, LastContactedByRegion: 1, LastContactedByReportsTo: 1, LastContactedByTitle: 1, LastContactedByTitleOfCourtesy: 1, SendBulletin: 1 }, CustomerGrossSales: { ContactName: 1, CustomerId: 1, GrossAmount: 1, ProductId: 1, ProductName: 1 }, CustomerRepresentatives: { CustomerId: 1, EmployeeId: 1, RepresentativeId: 1 }, DragDropSample: { Id: 1, ParentId: 1, Title: 1 }, Employee: { Address: 1, BirthDate: 1, City: 1, Country: 1, EmployeeID: 1, Extension: 1, FirstName: 1, FullName: 1, Gender: 1, HireDate: 1, HomePhone: 1, LastName: 1, Notes: 1, Photo: 1, PhotoPath: 1, PostalCode: 1, Region: 1, ReportsTo: 1, ReportsToAddress: 1, ReportsToBirthDate: 1, ReportsToCity: 1, ReportsToCountry: 1, ReportsToExtension: 1, ReportsToFirstName: 1, ReportsToFullName: 1, ReportsToHireDate: 1, ReportsToHomePhone: 1, ReportsToLastName: 1, ReportsToNotes: 1, ReportsToPhoto: 1, ReportsToPhotoPath: 1, ReportsToPostalCode: 1, ReportsToRegion: 1, ReportsToReportsTo: 1, ReportsToTitle: 1, ReportsToTitleOfCourtesy: 1, Title: 1, TitleOfCourtesy: 1 }, EmployeeTerritory: { EmployeeAddress: 1, EmployeeBirthDate: 1, EmployeeCity: 1, EmployeeCountry: 1, EmployeeExtension: 1, EmployeeFirstName: 1, EmployeeHireDate: 1, EmployeeHomePhone: 1, EmployeeID: 1, EmployeeLastName: 1, EmployeeNotes: 1, EmployeePhoto: 1, EmployeePhotoPath: 1, EmployeePostalCode: 1, EmployeeRegion: 1, EmployeeReportsTo: 1, EmployeeTitle: 1, EmployeeTitleOfCourtesy: 1, TerritoryID: 1, TerritoryRegionID: 1, TerritoryTerritoryDescription: 1 }, Note: { EntityId: 1, EntityType: 1, InsertDate: 1, InsertUserDisplayName: 1, InsertUserId: 1, NoteId: 1, Text: 1 }, Order: { CustomerCity: 1, CustomerCompanyName: 1, CustomerContactName: 1, CustomerContactTitle: 1, CustomerCountry: 1, CustomerFax: 1, CustomerID: 1, CustomerPhone: 1, CustomerRegion: 1, DetailList: 1, EmployeeFullName: 1, EmployeeGender: 1, EmployeeID: 1, EmployeeReportsToFullName: 1, Freight: 1, OrderDate: 1, OrderID: 1, RequiredDate: 1, ShipAddress: 1, ShipCity: 1, ShipCountry: 1, ShipName: 1, ShipPostalCode: 1, ShipRegion: 1, ShipVia: 1, ShipViaCompanyName: 1, ShipViaPhone: 1, ShippedDate: 1, ShippingState: 1 }, OrderDetail: { DetailID: 1, Discount: 1, LineTotal: 1, OrderCustomerID: 1, OrderDate: 1, OrderEmployeeID: 1, OrderID: 1, OrderShipCity: 1, OrderShipCountry: 1, OrderShipVia: 1, OrderShippedDate: 1, ProductDiscontinued: 1, ProductID: 1, ProductName: 1, ProductQuantityPerUnit: 1, ProductSupplierID: 1, ProductUnitPrice: 1, Quantity: 1, UnitPrice: 1 }, Product: { CategoryDescription: 1, CategoryID: 1, CategoryName: 1, CategoryPicture: 1, Discontinued: 1, ProductID: 1, ProductImage: 1, ProductName: 1, QuantityPerUnit: 1, ReorderLevel: 1, SupplierAddress: 1, SupplierCity: 1, SupplierCompanyName: 1, SupplierContactName: 1, SupplierContactTitle: 1, SupplierCountry: 1, SupplierFax: 1, SupplierHomePage: 1, SupplierID: 1, SupplierPhone: 1, SupplierPostalCode: 1, SupplierRegion: 1, UnitPrice: 1, UnitsInStock: 1, UnitsOnOrder: 1 }, ProductLang: { Id: 1, LanguageId: 1, ProductId: 1, ProductName: 1 }, ProductLog: { CategoryID: 1, ChangingUserId: 1, Discontinued: 1, OperationType: 1, ProductID: 1, ProductImage: 1, ProductLogID: 1, ProductName: 1, QuantityPerUnit: 1, ReorderLevel: 1, SupplierID: 1, UnitPrice: 1, UnitsInStock: 1, UnitsOnOrder: 1, ValidFrom: 1, ValidUntil: 1 }, Region: { RegionDescription: 1, RegionID: 1 }, SalesByCategory: { CategoryId: 1, CategoryName: 1, ProductName: 1, ProductSales: 1 }, Shipper: { CompanyName: 1, Phone: 1, ShipperID: 1 }, Supplier: { Address: 1, City: 1, CompanyName: 1, ContactName: 1, ContactTitle: 1, Country: 1, Fax: 1, HomePage: 1, Phone: 1, PostalCode: 1, Region: 1, SupplierID: 1 }, Territory: { ID: 1, RegionDescription: 1, RegionID: 1, TerritoryDescription: 1, TerritoryID: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, NorthwindPhone: 1, NorthwindPhoneMultiple: 1, SavePrimaryKeyError: 1 } });
+        Firefly3['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, ClientChapter: { ClientChapter: { Active: 1, AreaName: 1, BillingChapter: 1, BillingChapter2: 1, ChapterCode: 1, ChapterDesignation: 1, ChapterName: 1, ClientActiveDate: 1, ClientAddressLine1: 1, ClientAddressLine2: 1, ClientAddressLine3: 1, ClientChapterSKey: 1, ClientCity: 1, ClientEmailAddress: 1, ClientEmailAddress2: 1, ClientFax: 1, ClientId: 1, ClientLevel1: 1, ClientLevel2: 1, ClientLevel3: 1, ClientLevel4: 1, ClientName: 1, ClientPhone: 1, ClientState: 1, ClientZip: 1, Commander: 1, Commander2: 1, CommanderLastName: 1, CommanderLastName2: 1, CommanderTitle: 1, CommanderTitle2: 1, CreateDate: 1, CreatedBy: 1, CustomerBillingNumber: 1, Division: 1, EnvelopeClientName: 1, EnvelopeLine1: 1, EnvelopeLine2: 1, EnvelopeLine3: 1, EnvelopeLine4: 1, EnvelopeLine5: 1, FiscalYearBegins: 1, Flex1: 1, Flex2: 1, Flex3: 1, Flex4: 1, Flex5: 1, LastThankYouDate: 1, Lockbox: 1, MdCoord: 1, ModifiedBy: 1, ModifiedDate: 1, MspThank: 1, OldChapterCode: 1, OriginalName: 1, Region: 1, SeedNames: 1, Uw: 1, UwBlackoutFromDate: 1, UwBlackoutToDate: 1, Vertical: 1, WebAddress: 1 }, DropDownLookups: { CreateDate: 1, CreatedBy: 1, DropDownField: 1, DropDownLookupsSKey: 1, DropdownSort: 1, DropdownValue: 1, ModifiedBy: 1, ModifiedDate: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
     })(Texts = Firefly3.Texts || (Firefly3.Texts = {}));
 })(Firefly3 || (Firefly3 = {}));
 var Firefly3;

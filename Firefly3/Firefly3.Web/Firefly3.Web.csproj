@@ -520,6 +520,7 @@
     <Content Include="Content\site\images\tsm-favicon.ico" />
     <Content Include="Content\site\images\tsmfix.jpg" />
     <Content Include="Content\site\images\tsmsqrblue.png" />
+    <Content Include="Content\site\images\White_full.png" />
     <Content Include="Content\slick-default-theme.css" />
     <Content Include="Content\slick.columnpicker.css" />
     <Content Include="Content\slick.grid.css" />
@@ -1023,6 +1024,9 @@
     <Content Include="tools\Node\less\lib\less\visitor.js" />
     <Content Include="tools\Node\node.exe" />
     <Content Include="tsconfig.json" />
+    <TypeScriptCompile Include="Imports\ServerTypings\ClientChapter.ClientChapterColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Texts.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1587,6 +1591,12 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <Content Include="Content\site\site.clientchapter.less" />
+    <TypeScriptCompile Include="Imports\ServerTypings\ClientChapter.DropDownLookupsRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\ClientChapter.DropDownLookupsService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -1623,6 +1633,7 @@
     <Compile Include="Modules\Administration\User\Authentication\IDirectoryService.cs" />
     <Compile Include="Modules\Administration\User\Authentication\ScriptUserDefinition.cs" />
     <Compile Include="Modules\Administration\User\UserColumns.cs" />
+    <Compile Include="Modules\ClientChapter\ClientChapter\VerticalEnum.cs" />
     <Compile Include="Modules\Common\Helpers\EmailHelper.cs" />
     <Compile Include="Modules\Common\Helpers\ExcelImportRequest.cs" />
     <Compile Include="Modules\Common\Dashboard\DashboardPageModel.cs" />
@@ -1727,6 +1738,9 @@
     <Compile Include="Modules\ClientChapter\ClientChapter\ClientChapterColumns.cs" />
     <Compile Include="Modules\ClientChapter\ClientChapter\ClientChapterForm.cs" />
     <Compile Include="Modules\ClientChapter\ClientChapterNavigation.cs" />
+    <Compile Include="Modules\ClientChapter\DropDownLookups\DropDownLookupsRow.cs" />
+    <Compile Include="Modules\ClientChapter\DropDownLookups\DropDownLookupsRepository.cs" />
+    <Compile Include="Modules\ClientChapter\DropDownLookups\DropDownLookupsEndpoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

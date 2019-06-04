@@ -62,7 +62,7 @@ namespace Firefly3.ClientChapter.Forms
         public String ChapterDesignation { get; set; }
         public String Division { get; set; }
         public Boolean Active { get; set; }
-        public Int32? Vertical { get; set; }
+        public String Vertical { get; set; }
         public DateTime ClientActiveDate { get; set; }
         public DateTime FiscalYearBegins { get; set; }
         public String Flex1 { get; set; }

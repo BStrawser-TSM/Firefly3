@@ -43,7 +43,7 @@ namespace Firefly3.Membership.Pages
                     throw new ArgumentNullException("username");
 
                 var username = request.Username;
-                
+
                 if (WebSecurityHelper.Authenticate(ref username, request.Password, false))
                     return new ServiceResponse();
 

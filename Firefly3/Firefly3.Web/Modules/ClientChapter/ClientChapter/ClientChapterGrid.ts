@@ -12,5 +12,7 @@ namespace Firefly3.ClientChapter {
         constructor(container: JQuery) {
             super(container);
         }
+
+        //Can insert stuff here to make what is searched for choosable
     }
 }

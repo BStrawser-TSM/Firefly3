@@ -1,6 +1,7 @@
 ﻿
 namespace Firefly3.ClientChapter.Entities
 {
+    using Firefly3.Modules.ClientChapter.ClientChapter;
     using Serenity;
     using Serenity.ComponentModel;
     using Serenity.Data;

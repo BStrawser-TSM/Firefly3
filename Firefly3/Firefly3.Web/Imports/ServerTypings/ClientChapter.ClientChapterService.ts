@@ -1,5 +1,4 @@
-﻿
-namespace Firefly3.ClientChapter {
+﻿namespace Firefly3.ClientChapter {
     export namespace ClientChapterService {
         export const baseUrl = 'ClientChapter/ClientChapter';
 
@@ -9,12 +8,12 @@ namespace Firefly3.ClientChapter {
         export declare function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ClientChapterRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ClientChapterRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
 
-        export namespace Methods {
-            export declare const Create: string;
-            export declare const Update: string;
-            export declare const Delete: string;
-            export declare const Retrieve: string;
-            export declare const List: string;
+        export declare const enum Methods {
+            Create = "ClientChapter/ClientChapter/Create",
+            Update = "ClientChapter/ClientChapter/Update",
+            Delete = "ClientChapter/ClientChapter/Delete",
+            Retrieve = "ClientChapter/ClientChapter/Retrieve",
+            List = "ClientChapter/ClientChapter/List"
         }
 
         [
@@ -24,10 +23,10 @@ namespace Firefly3.ClientChapter {
             'Retrieve', 
             'List'
         ].forEach(x => {
-            (<any>ClientChapterService)[x] = function (r, s, o) { 
-                return Q.serviceRequest(baseUrl + '/' + x, r, s, o); 
+            (<any>ClientChapterService)[x] = function (r, s, o) {
+                return Q.serviceRequest(baseUrl + '/' + x, r, s, o);
             };
-            (<any>Methods)[x] = baseUrl + '/' + x;
         });
     }
 }
+
