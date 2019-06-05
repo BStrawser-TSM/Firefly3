@@ -1,14 +1,11 @@
 ﻿
 namespace Firefly3.ClientChapter.Entities
 {
-    using Firefly3.Modules.ClientChapter.ClientChapter;
-    using Serenity;
     using Serenity.ComponentModel;
     using Serenity.Data;
     using Serenity.Data.Mapping;
     using System;
     using System.ComponentModel;
-    using System.IO;
 
     [ConnectionKey("ClientChapter"), Module("ClientChapter"), TableName("[cc].[ClientChapter]")]
     [DisplayName("Client Chapter"), InstanceName("Client Chapter")]
